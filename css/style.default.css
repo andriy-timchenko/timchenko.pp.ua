@@ -446,6 +446,7 @@ nav.navbar a.nav-link.active, nav.navbar a.nav-link:hover {
 
 .reference {
   margin-bottom: 30px;
+  margin-top: 30px;
   overflow: hidden;
 }
 
