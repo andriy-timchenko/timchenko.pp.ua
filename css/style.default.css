@@ -36,6 +36,10 @@ section {
   position: relative;
 }
 
+.main p {
+  margin: 17px 0 17px 0;
+}
+
 .text-bold {
   font-weight: 700;
 }
