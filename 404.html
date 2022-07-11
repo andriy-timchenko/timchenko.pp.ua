@@ -2,7 +2,7 @@
 <html lang=en >
 <head>
   <meta charset=UTF-8>
-  <meta http-equiv="refresh" content="5; URL='/'" />
+  <meta http-equiv="refresh" content="60; URL='/'" />
   <title>Помилка 404. Сторінку не знайдено</title>  
   <link rel='stylesheet' href='https://cdn.3up.dk/flexgrid.io@2.5.1/css/flexgrid.min.css'>  
 <style>
@@ -13,13 +13,9 @@ html, body {
 }
 
 body {
-  background-image: url(img/intro-map.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-  min-width: 100vw;
+  background-color: bisque;
   font-family: Roboto Mono, Liberation Mono, Consolas, monospace;
-  color: rgba(255, 255, 255, 0.87);
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .mx-auto {
@@ -60,11 +56,7 @@ function goBack() {
 <script>
   window.console = window.console || function(t) {};
 </script>
-<script>
-  if (document.location.search.match(/type=embed/gi)) {
-    window.parent.postMessage(resize, *);
-  }
-</script>
+
 </head>
 <body translate=no >
   <div class=container>
