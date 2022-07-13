@@ -49,7 +49,7 @@ section {
 }
 
 .text-shadow {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  text-shadow: 0 4px 4px rgba(0.3, 0.3, 0.5, 0.8);
 }
 
 .text-300 {
@@ -183,9 +183,10 @@ nav.navbar a.nav-link.active, nav.navbar a.nav-link:hover {
 * =====================
 *
 */
+
 .intro-section {
   padding-top: 150px;
-  color: #fff;
+  color: rgb(255, 255, 255);
 }
 
 .intro-section .logo, .intro-section p {
@@ -201,6 +202,8 @@ nav.navbar a.nav-link.active, nav.navbar a.nav-link:hover {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    padding-left: 30%;
+    padding-top: 21%;
   }
 }
 
