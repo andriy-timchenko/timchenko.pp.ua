@@ -1,4 +1,29 @@
- 
+
+@font-face {
+  font-family: RocherColor;
+  src: url('../fonts/RocherColor/RocherColorGX.ttf'); 
+}
+@font-face {
+  font-family: RocherColor;
+  src: url('../fonts/RocherColor/RocherColorGX.woff') format('woff'),
+       url('../fonts/RocherColor/RocherColorGX.woff2') format('woff2');  
+       font-weight: normal;
+       font-style: normal;
+}
+
+@supports (font-palette: --YellowAndBlue) {
+  .lilacblossom {
+      font-palette: --YellowAndBlue;
+  }
+}
+@font-palette-values --YellowAndBlue {
+  font-family: RocherColor;
+  base-palette: 5;
+  override-colors:
+    0 var(--yellow),
+    1 var(--blue);
+}
+
     body,menu,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
       margin:0; padding:0; 
       }
@@ -38,7 +63,14 @@
     abbr,acronym { border:0; }
     a { color: #ce1b1b; text-decoration: none; }
     a:hover { color: #000; border-bottom: 1px solid #f00; }
-
+   
+    .glory {
+      font-family: RocherColor;
+      font-palette: --YellowAndBlue;
+      font-weight: 400;
+      font-size: 2em;
+      font-variation-settings: "BVEL" 50, "SHDW" 100;
+    }
 
     
     
