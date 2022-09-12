@@ -175,7 +175,10 @@
       margin-top: 8em; 
       border-top: 1px solid #cfcfcf; 
       }
-
+    .donate {
+      padding-top: 2em;
+      margin-bottom: 2em;
+    }
     p.closing { 
       text-align: center; 
       margin-top: 1em; 
