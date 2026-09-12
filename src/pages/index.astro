@@ -1,0 +1,284 @@
+---
+// src/pages/history.astro
+import '../styles/global.css';
+import { Image } from 'astro:assets';
+import mapImage from '../assets/intro-top-map.jpg';
+import kyivMoscowMap from '../assets/kyiv-moscow.jpg';
+import kyivImage from '../assets/KYIV.png';
+import rus1471Image from '../assets/rus_1471.jpeg';
+
+const historyFacts = [
+  {
+    year: "482 р.",
+    title: "Заснування Києва",
+    description: "Серце України та один із найстаріших центрів Європи. Назва 'Україна' впервые згадується у Київському літописі 1187 року 🇺🇦 і походить від слова 'Країна' (держава), а не 'окраїна'.",
+    accent: "border-cyan-500/40"
+  },
+  {
+    year: "988 р.",
+    title: "Хрещення Русі та Освіта",
+    description: "Князь Володимир хрестив Русь. Русь була європейським центром освіти: перший навчальний заклад згадується 988 роком, у 1030 р. створено школу в Новгороді, у 1576 р. — Острозьку академію, а в 1615 р. — Києво-Могилянську академію.",
+    accent: "border-emerald-500/40"
+  },
+  {
+    year: "1147 р.",
+    title: "Заснування Москви",
+    description: "Заснована Юрієм Долгоруким (праправнуком Володимира Святославовича). Долгорукий привласнив території суздальського боярина Степана Кучка. Сам Долгорукий похований у Києві біля Києво-Печерської Лаври.",
+    accent: "border-amber-500/40"
+  },
+  {
+    year: "1721 р.",
+    title: "Привласнення назви та спадщини",
+    description: "Петро І перейменував Московську державу на 'Російську Імперію', запозичивши бренд Русі — шанованої європейської держави, чиї князі були у родинних зв'язках з королівськими домами Європи (Анна Ярославна — королева Франції, свята Маргарита Единбурзька — онука Ярослава Мудрого).",
+    accent: "border-purple-500/40"
+  },
+  {
+    year: "300+ років",
+    title: "Спроби знищення та Незламність",
+    description: "Українську мову забороняли 134 рази❗ Комуністичний тоталітарний режим знищив 10 млн 500 тис. українців під час Голодомору 1932–1933 років. Проте українці продовжують виборювати свободу та гідність.",
+    accent: "border-red-500/40"
+  }
+];
+---
+
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Історія України | Kyiv & Moscow Facts</title>
+  </head>
+  <body class="bg-[#0b0f19] text-slate-200 font-['Inter',sans-serif] min-h-screen flex flex-col justify-between selection:bg-cyan-500 selection:text-black">
+    
+    <!-- Сітка на фоні -->
+    <div class="fixed inset-0 pointer-events-none -z-10 bg-[linear-gradient(to_right,#1e293b15_1px,transparent_1px),linear-gradient(to_bottom,#1e293b15_1px,transparent_1px)] bg-[size:4rem_4rem]">
+      <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[140px]"></div>
+    </div>
+
+    <!-- Шапка з навігацією -->
+    <header class="w-full max-w-5xl mx-auto px-6 py-6 flex justify-between items-center border-b border-slate-800/60">
+      <a href="/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 font-mono text-xs text-slate-400 hover:text-cyan-400 transition">
+        <span>← На головну</span>
+      </a>
+      <span class="text-xs font-mono text-cyan-400 font-bold">timchenko.pp.ua / history</span>
+    </header>
+
+    <main class="w-full max-w-4xl mx-auto px-6 py-12 space-y-16">
+      
+
+
+      <!-- Блок із картою Київської Русі -->
+      <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 space-y-4 shadow-2xl overflow-hidden">
+        <div class="flex justify-between items-center flex-wrap gap-2">
+          <h2 class="text-lg font-bold text-white flex items-center gap-2">
+            <span>🗺️ Територія Київської Русі (XI–XII століття)</span>
+          </h2>
+          <span class="font-mono text-xs text-cyan-400 bg-cyan-950/60 border border-cyan-800 px-3 py-1 rounded-full">
+            800 000 — 1 300 000 кв. км
+          </span>
+        </div>
+        
+        <p class="text-xs sm:text-sm text-slate-400">
+          Для порівняння, сучасна площа України становить 603 548 кв. км. Держава простягалася від Чорного моря до Балтійського та Білого морів.
+        </p>
+
+        <div class="relative rounded-xl overflow-hidden border border-slate-700/60 group">
+          <Image 
+            src={mapImage} 
+            alt="Карта Київської Русі від Чорного до Балтійського моря" 
+            class="w-full h-auto object-cover group-hover:scale-105 transition duration-500"
+          />
+        </div>
+      </div>
+      <!-- Заголовок розділу -->
+      <div class="text-center space-y-4">
+          <h1>🇺🇦 Просвітницький блок</h1>
+        <p class="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+          Факти про справжні витоки держави, культуру, європейські корені та хронологію подій.
+        </p>
+      </div>
+      <!-- Інтерактивна часова шкала (Timeline) -->
+      <div class="relative border-l-2 border-slate-800 ml-4 sm:ml-32 space-y-10">
+        {historyFacts.map((fact) => (
+          <div class="relative pl-6 sm:pl-8 group">
+            <!-- Точка на лінійці -->
+            <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-900 border-2 border-cyan-400 group-hover:scale-125 group-hover:bg-cyan-400 transition"></div>
+            
+            <!-- Роки збоку для великих екранів -->
+            <div class="sm:absolute sm:-left-32 sm:top-1 font-mono text-xs sm:text-sm text-cyan-400 font-bold sm:w-24 sm:text-right">
+              {fact.year}
+            </div>
+
+            <!-- Картка з фактом -->
+            <div class={`bg-slate-900/60 backdrop-blur-md border ${fact.accent} rounded-xl p-5 sm:p-6 shadow-xl space-y-2 hover:border-cyan-400/60 transition`}>
+              <h3 class="text-lg font-bold text-white flex items-center justify-between">
+                <span>{fact.title}</span>
+              </h3>
+              <p class="text-slate-300 text-sm leading-relaxed">
+                {fact.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <!-- Вбудоване відео з YouTube -->
+      <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 space-y-4 shadow-2xl">
+        <h2 class="text-lg font-bold text-white flex items-center gap-2">
+          <span>🎥 Історія України за 10 хвилин</span>
+        </h2>
+        <div class="aspect-video w-full rounded-xl overflow-hidden border border-slate-800">
+          <iframe 
+            class="w-full h-full"
+            src="https://www.youtube.com/embed/zNFUqradyV4?si=LQhLc6_LY743ezW5"  
+            title="History of Ukraine" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Текстовий баннер Help Ukraine Now замість SVG -->
+      <a 
+        href="https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="block w-full rounded-2xl overflow-hidden shadow-2xl border border-blue-500/40 hover:opacity-95 transition group text-left no-underline my-8"
+      >
+        <div class="bg-[#0057b7] p-6 sm:p-8 text-white space-y-3">
+          <p class="text-base sm:text-xl font-bold leading-relaxed max-w-3xl mx-auto text-center">
+            This project was developed with substantial contributions by <span class="underline decoration-yellow-400 font-black">Ukrainian developers</span>. 
+            Russia invaded Ukraine, killing tens of thousands of civilians and displacing millions more. 
+            It's a genocide. Please help us defend freedom, democracy and Ukraine's right to exist.
+          </p>
+        </div>
+        <div class="bg-[#ffd700] py-4 text-center text-black font-black text-lg sm:text-2xl font-mono flex items-center justify-center gap-2 group-hover:bg-yellow-300 transition">
+          <span>Help Ukraine Now</span>
+          <span class="group-hover:translate-x-2 transition duration-300">→</span>
+        </div>
+      </a>
+
+      <!-- Additional terms of use for users from RU/BY -->
+      <div class="bg-slate-950 border border-red-900/40 rounded-2xl p-6 sm:p-8 space-y-4">
+        <h3 class="text-lg font-bold text-red-400 font-mono flex items-center gap-2">
+          <span class="text-xl">⚠️</span>
+          Additional terms of use for users from Russia and Belarus
+        </h3>
+
+        <p class="text-xs text-slate-400 font-mono">
+          By using the code provided in these repositories you agree with the following:
+        </p>
+
+        <ul class="space-y-2 text-sm text-slate-300 font-mono list-disc list-inside">
+          <li>
+            Russia has <a href="https://en.wikipedia.org/wiki/Annexation_of_Crimea_by_the_Russian_Federation" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:underline">illegally annexed Crimea in 2014</a> 
+            and <a href="https://en.wikipedia.org/wiki/War_in_Donbas" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:underline">brought the war in Donbas</a> 
+            followed by <a href="https://en.wikipedia.org/wiki/2022_Russian_invasion_of_Ukraine" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:underline">full-scale invasion of Ukraine in 2022</a>.
+          </li>
+          <li>
+            Russia has brought sorrow and devastations to millions of Ukrainians, killed hundreds of innocent people, damaged thousands of buildings, and forced several million people to flee.
+          </li>
+          <li class="pt-2">
+            <a href="https://en.wikipedia.org/wiki/Putin_khuylo!" target="_blank" rel="noopener noreferrer" class="text-red-500 font-bold hover:underline">
+              Putin khuylo!
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Порівняльні блоки зображень (KYIV vs MOSCOW & росія у 1471) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- KYIV and MOSCOW -->
+        <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 space-y-3 shadow-2xl">
+          <p class="font-mono text-sm font-bold text-white uppercase tracking-wider">KYIV and MOSCOW</p>
+          <div class="rounded-xl overflow-hidden border border-slate-700/60 bg-black/40 p-2 group">
+            <Image src={kyivImage} alt="KYIV and MOSCOW" class="w-full h-auto object-contain rounded-lg group-hover:scale-105 transition duration-300" />
+          </div>
+        </div>
+
+        <!-- росія у 1471 -->
+        <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 space-y-3 shadow-2xl">
+          <p class="font-mono text-sm font-bold text-white uppercase tracking-wider">росія у 1471</p>
+          <div class="rounded-xl overflow-hidden border border-slate-700/60 bg-black/40 p-2 group">
+            <Image src={rus1471Image} alt="росія у 1471" class="w-full h-auto object-contain rounded-lg group-hover:scale-105 transition duration-300" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Додаткове порівняння KYIV and MOSCOW Chronology -->
+      <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 space-y-4 shadow-2xl">
+        <div class="flex justify-between items-center">
+          <h2 class="text-lg font-bold text-white font-mono flex items-center gap-2">
+            <span>🏛️ KYIV and MOSCOW Chronology</span>
+          </h2>
+          <span class="text-xs font-mono text-cyan-400 bg-cyan-950 px-2.5 py-1 rounded border border-cyan-800">
+            Historical Comparison
+          </span>
+        </div>
+        
+        <p class="text-slate-400 text-xs sm:text-sm">
+          Поки у Києві будувалися величні собори X–XII століть, на території майбутньої Москви були суцільні ліси та болота.
+        </p>
+
+        <div class="rounded-xl overflow-hidden border border-slate-700/60 group bg-black/40 p-2">
+          <Image 
+            src={kyivMoscowMap} 
+            alt="Kyiv and Moscow historical architectural comparison" 
+            class="w-full h-auto object-contain rounded-lg group-hover:scale-[1.01] transition duration-300"
+          />
+        </div>
+      </div>
+
+      <!-- Glory to Ukraine & Donate Section -->
+      <div class="space-y-6">
+        <div class="text-center py-2">
+          <h3 class="text-3xl font-black text-cyan-400 font-mono inline-flex items-center gap-2">
+            <span>Glory to Ukraine!</span> 🇺🇦
+          </h3>
+        </div>
+
+        <div class="bg-slate-900/90 border border-cyan-500/30 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-around gap-6 shadow-2xl">
+          <!-- PayPal -->
+          <form action="https://www.paypal.com/donate" method="post" target="_blank" class="flex flex-col items-center gap-2">
+            <input type="hidden" name="hosted_button_id" value="U4YSEHVUNBJY2" />
+            <input 
+              type="image" 
+              src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" 
+              border="0" 
+              name="submit" 
+              title="Donate with PayPal" 
+              alt="Donate with PayPal button" 
+              class="hover:scale-105 transition"
+            />
+          </form>
+
+          <!-- QR P24 -->
+          <div class="flex flex-col items-center gap-2">
+            <span class="text-xs font-mono text-slate-400">Donate via Privat24</span>
+            <img src="https://timchenko.pp.ua/images/qrP24.png" alt="Donate P24" class="w-32 h-32 rounded-lg border border-slate-700 p-1 bg-white" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Фінальна цитата-підсумок -->
+      <div class="p-6 bg-gradient-to-r from-cyan-950/40 to-emerald-950/40 border border-cyan-500/30 rounded-2xl text-center space-y-3">
+        <p class="text-slate-200 font-semibold text-base sm:text-lg">
+          "Для українців, на відміну від ворога, цінна не територія, а свобода та гідність. І поки існує у світі хоча б один українець — у ворога немає шансів."
+        </p>
+        <p class="font-mono text-xs text-cyan-400">Слава Україні! 💙💛</p>
+      </div>
+
+    </main>
+
+    <!-- Футер з посиланнями на соцмережі -->
+    <footer class="w-full border-t border-slate-800/60 py-8 text-center space-y-4 font-mono text-xs text-slate-500">
+      <div class="flex justify-center gap-6 text-base text-slate-400">
+        <a href="https://twitter.com/snow_man_ukrop" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition">Twitter</a>
+        <a href="https://github.com/andriy-timchenko" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition">GitHub</a>
+      </div>
+      <p>© {new Date().getFullYear()} Andriy Timchenko | timchenko.pp.ua</p>
+    </footer>
+
+  </body>
+</html>

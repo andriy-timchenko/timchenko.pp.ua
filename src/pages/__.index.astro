@@ -1,0 +1,143 @@
+---
+// src/pages/index.astro
+import '../styles/global.css';
+---
+
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Andriy Timchenko | Energy & Automation Specialist</title>
+    <!-- Шрифти Google (Inter & JetBrains Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#0b0f19] text-slate-200 font-['Inter',sans-serif] min-h-screen flex flex-col justify-between selection:bg-cyan-500 selection:text-black overflow-x-hidden">
+    
+    <!-- Фонова технологічна сітка та градієнтне сяйво -->
+    <div class="fixed inset-0 pointer-events-none -z-10 bg-[linear-gradient(to_right,#1e293b15_1px,transparent_1px),linear-gradient(to_bottom,#1e293b15_1px,transparent_1px)] bg-[size:4rem_4rem]">
+      <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-emerald-500/10 rounded-full blur-[100px]"></div>
+    </div>
+
+    <!-- Верхній роут/домен -->
+    <header class="w-full max-w-7xl mx-auto px-6 py-6 flex justify-between items-center border-b border-slate-800/60">
+      <div class="flex items-center gap-2 font-mono text-sm text-slate-400">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="text-cyan-400 font-bold">timchenko.pp.ua</span>
+      </div>
+      <a href="https://github.com" target="_blank" class="text-xs font-mono bg-slate-800/80 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-md border border-slate-700 transition">
+        GitHub Profile
+      </a>
+    </header>
+
+    <!-- Головний контент (Hero Section) -->
+    <main class="w-full max-w-7xl mx-auto px-6 py-12 lg:py-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center my-auto">
+      
+      <!-- Ліва колонка: Текст та опис -->
+      <div class="lg:col-span-7 space-y-8">
+        <div>
+          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white uppercase leading-[1.1]">
+            Andriy <br/>
+            <span class="bg-gradient-to-r from-slate-100 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
+              Timchenko
+            </span>
+          </h1>
+          <p class="mt-4 font-mono text-xs sm:text-sm text-cyan-400/90 tracking-wide font-semibold">
+            Tech Enthusiast | Home Assistant & Energy Specialist | Linux (Ubuntu) Power User | AI Integration
+          </p>
+        </div>
+
+        <p class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-2xl">
+          Bridging the gap between code and reality. Crafting efficient, resilient, smart, and energy-independent spaces using cutting-edge technology and local intelligence.
+        </p>
+
+        <!-- Теги технологій -->
+        <div class="flex flex-wrap gap-2 pt-2">
+          {['Ubuntu Linux', 'Home Assistant', 'Victron Energy', 'BSLBATT', 'Local AI / Ollama', 'YAML Automation'].map((tech) => (
+            <span class="px-3 py-1 rounded-full text-xs font-mono bg-slate-900/90 text-slate-300 border border-slate-800 shadow-sm">
+              {tech}
+            </span>
+          ))}
+        </div>
+
+        <!-- Кнопки дій -->
+        <div class="pt-4 flex flex-wrap gap-4">
+          <a href="#contact" class="px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-emerald-500 text-black font-extrabold text-sm hover:opacity-90 transition shadow-[0_0_20px_rgba(6,182,212,0.3)]">
+            Зв'язатися
+          </a>
+          <a href="https://github.com/a-timchenko/a-timchenko.github.io" target="_blank" class="px-6 py-3 rounded-lg bg-slate-900 text-slate-200 border border-slate-700 text-sm hover:bg-slate-800 transition">
+            Переглянути код проєкту
+          </a>
+        </div>
+      </div>
+
+      <!-- Права колонка: Інтерактивний 3D-Tech блок (Ілюстрація) -->
+      <div class="lg:col-span-5 relative flex justify-center items-center">
+        <!-- Сяйво за блоком -->
+        <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-emerald-500/20 rounded-2xl blur-2xl transform rotate-3"></div>
+        
+        <div class="relative w-full max-w-md bg-slate-900/80 backdrop-blur-xl border border-slate-700/60 rounded-2xl p-6 shadow-2xl space-y-6">
+          <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+            <div class="flex gap-1.5">
+              <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+              <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+              <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+            </div>
+            <span class="font-mono text-xs text-slate-500">system_status.sh</span>
+          </div>
+
+          <!-- Слизова схема елементів -->
+          <div class="space-y-4 font-mono text-xs">
+            <!-- AI Core -->
+            <div class="p-3 bg-slate-950/80 rounded-lg border border-cyan-500/30 flex justify-between items-center shadow-[0_0_10px_rgba(6,182,212,0.1)]">
+              <div class="flex items-center gap-2">
+                <span class="text-cyan-400 font-bold">🧠 AI Core</span>
+              </div>
+              <span class="text-emerald-400 bg-emerald-950/50 px-2 py-0.5 rounded border border-emerald-800">ONLINE</span>
+            </div>
+
+            <!-- Victron Inverter -->
+            <div class="p-3 bg-slate-950/80 rounded-lg border border-red-500/30 flex justify-between items-center shadow-[0_0_10px_rgba(239,68,68,0.1)]">
+              <div class="flex items-center gap-2">
+                <span class="text-red-400 font-bold">⚡ Victron Inverter</span>
+              </div>
+              <span class="text-slate-400">VE.Direct Active</span>
+            </div>
+
+            <!-- BSLBATT -->
+            <div class="p-3 bg-slate-950/80 rounded-lg border border-emerald-500/30 flex justify-between items-center shadow-[0_0_10px_rgba(16,185,129,0.1)]">
+              <div class="flex items-center gap-2">
+                <span class="text-emerald-400 font-bold">🔋 BSLBATT Pack</span>
+              </div>
+              <span class="text-emerald-400">SOC 98%</span>
+            </div>
+
+            <!-- Home Assistant -->
+            <div class="p-3 bg-slate-950/80 rounded-lg border border-blue-500/30 flex justify-between items-center">
+              <div class="flex items-center gap-2">
+                <span class="text-blue-400 font-bold">🏠 Home Assistant</span>
+              </div>
+              <span class="text-slate-400">Ubuntu Server</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Футер -->
+    <footer class="w-full border-t border-slate-800/60 py-6 text-center font-mono text-xs text-slate-500">
+      <div class="flex items-center justify-center gap-2">
+        <svg class="w-4 h-4 fill-current text-slate-400" viewBox="0 0 24 24">
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+        </svg>
+        <span>GitHub Pages</span>
+      </div>
+      <p class="mt-2">Powered by Astro & Hosted on GitHub Pages</p>
+    </footer>
+
+  </body>
+</html>
