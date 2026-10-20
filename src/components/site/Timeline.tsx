@@ -58,7 +58,10 @@ function EventDetails({
                 alt={ev.image.alt}
                 loading="lazy"
                 data-testid={`timeline-event-image-${ev.id}`}
-                className="h-48 w-full object-cover md:h-full"
+                className={cn(
+                  "h-48 w-full md:h-full",
+                  ev.image.contain ? "bg-black/30 object-contain p-6" : "object-cover",
+                )}
               />
             </figure>
           )}
@@ -168,7 +171,7 @@ export default function Timeline() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
           kicker="Зала II · Хронограф"
-          title="Тисячоліття в семи подіях"
+          title="Тисячоліття в десяти подіях"
           lead="Розгорніть подію, щоб прочитати повний текст і перевірити джерела. Позначки показують, де факт підтверджено, а де тривають наукові дискусії."
           testId="timeline-title"
         />
