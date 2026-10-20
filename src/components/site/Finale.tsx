@@ -88,8 +88,7 @@ export default function Finale() {
 
       <footer data-testid="site-footer" className="mx-auto mt-24 max-w-7xl border-t border-line px-5 pt-8 text-sm text-muted-foreground sm:px-8">
         <p>
-          Просвітницький проєкт про історію України. Факти супроводжуються джерелами; твердження без надійного
-          підтвердження позначено як «потребує уточнення» або «дискусійне».
+          © Андрій Тимченко.
         </p>
       </footer>
     </section>
